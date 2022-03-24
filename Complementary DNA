@@ -1,3 +1,5 @@
+#Takes in a string from a single DNA strand (e.g. 'ACCTGA') and returns the corresponding string.
+
 def DNA_strand(DNA):
     match={'A':'T','C':'G','T':'A','G':'C'}
     return''.join(match[base]for base in DNA)
