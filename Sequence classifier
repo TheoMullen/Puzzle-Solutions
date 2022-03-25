@@ -1,0 +1,28 @@
+def sequence_classifier(arr):
+    increase=[]
+    decrease=[]
+    same=[]
+    
+    for ind,num in enumerate(arr):
+        
+        if ind==0:
+            pass
+        elif num>arr[ind-1]:
+            increase.append(num)
+        elif num<arr[ind-1]:
+            decrease.append(num)
+        else:
+            same.append(num)
+    
+    if   len(increase)>0 and len(decrease)>0:
+        return 'unordered'
+    elif len(same)==0 and len(increase)>0:
+        return 'strictly increasing'
+    elif len(same)>0 and len(increase)>0:
+        return 'not decreasing'
+    elif len(same)==0 and len(decrease)>0:
+        return 'strictly decreasing'
+    elif len(same)>0 and len(decrease)>0:
+        return 'not increasing'
+    else:
+        return 'constant'
