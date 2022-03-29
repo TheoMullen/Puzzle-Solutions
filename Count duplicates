@@ -1,0 +1,9 @@
+def count_duplicates(text):
+
+    a=set()
+    
+    for item in text:  
+        if text.count(item)>1 or text.count(item.swapcase())>0 and item.swapcase()!=item:
+            a.add(item.lower())
+            
+    return(len(a))
