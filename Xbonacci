@@ -1,0 +1,10 @@
+# A function that takes in a list of x numbers and appends the sum of the last x numbers up to a range limit (n).
+
+def Xbonacci(signature,n):
+    lst=[num for num in signature]
+    
+    if len(signature)<n:
+        [lst.append(sum(lst[-len(signature)::]))for x in range(n-len(signature))]
+        return lst
+    else:
+        return lst[:n]
